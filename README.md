@@ -1,8 +1,8 @@
 Portfolio
 Meu portfolio
-
-tarefas
+---
+Tarefas
 O controle das tarefas desse projeto sera realizado no Github
-
-icones
+---
+Icones
 📦 nova funcionalidade 🆙 atualização 🪲 correção de bug 🏁 release
