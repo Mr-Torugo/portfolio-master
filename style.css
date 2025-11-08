@@ -9,6 +9,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 :root {
@@ -55,7 +56,7 @@ html {
 }
 
 .show-menu #line1 {
-  transform: rotate(40deg) translate(.3rem, .45rem);
+  transform: rotate(50deg) translate(.3rem, .3rem);
 
 }
 
@@ -65,7 +66,7 @@ html {
 }
 
 .show-menu #line3 {
-  transform: rotate(-40deg) translate(.3rem, -.45rem);
+  transform: rotate(-50deg) translate(.3rem, -.45rem);
 
 }
 
@@ -104,6 +105,13 @@ header {
   position: relative;
 }
 
+.botoes-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
 .img-wrapper {
   width: 100%;
   height: 100%;
@@ -117,7 +125,6 @@ header {
   object-fit: cover;
   opacity: 0.5;
   animation: zoom 25s;
-  /* timing-function delay iteration-count direction fill-mode; */
 
 }
 
@@ -169,10 +176,6 @@ header {
   right: -20rem;
   transition: all 1s;
   z-index: 80;
-
-
-
-
 }
 
 .show-menu .sidebar {
@@ -386,11 +389,6 @@ header {
 /*css dos card*/
 
 
-* {
-  box-sizing: border-box;
-}
-
-
 
 a {
   color: inherit;
@@ -411,7 +409,7 @@ a {
 }
 
 .card {
-  font-family: "Baloo Da 2", serif;
+  font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
   height: 20em;
@@ -431,9 +429,10 @@ a {
   overflow: hidden;
   border: 10px solid #ccc;
   text-decoration: none;
+  /*z-index: -10;*/
 }
 
-.card>ba .card:hover {
+.card:hover {
   transform: rotate(0);
 }
 
@@ -742,3 +741,148 @@ footer {
   border-radius: .3rem;
   box-shadow: 0 0.1rem 0.6rem #00000009;
 }
+
+
+/* =============================================
+   INÍCIO - CÓDIGO DE RESPONSIVIDADE
+   ============================================= */
+
+@media (max-width: 900px) {
+
+  /* --- 1. Seção Header / Banner --- */
+  /* Ajusta o posicionamento e o tamanho das fontes no banner */
+  .banner {
+    left: 10%;
+    width: 80%;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+    /* Um pouco menor que os 3rem originais */
+    line-height: 3rem;
+  }
+
+  .banner p {
+    font-size: 1.5rem;
+    /* Um pouco menor que os 2rem originais */
+  }
+
+
+  /* --- 2. Seção Conhecimentos --- */
+
+  .conhecimentos {
+    display: flex;
+    flex-direction: column;
+    /* Empilha os itens */
+    align-items: center;
+    /* Centraliza os cards de conhecimento */
+    gap: 2rem;
+    /* Adiciona um espaço entre os cards */
+    padding: 2rem 0;
+    /* Adiciona preenchimento vertical */
+  }
+
+  /* Reseta os posicionamentos de grid originais */
+  .conhecimento:nth-child(1),
+  .conhecimento:nth-child(2),
+  .conhecimento:nth-child(3),
+  .conhecimento:nth-child(4),
+  .conhecimento:nth-child(5),
+  .conhecimento:nth-child(6) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .conhecimento {
+    width: 80%;
+    /* Faz cada card ocupar 80% da largura */
+    max-width: 400px;
+    /* Mas limita a largura máxima */
+  }
+
+  /* A imagem decorativa no meio do grid pode ser escondida 
+     em telas menores para economizar espaço. */
+  .conhecimentos-img-wrapper {
+    display: none;
+  }
+
+
+  /* --- 3. Seção Contato --- */
+  /* empilhar o formulário e a imagem */
+  .contato-wrapper {
+    width: 90%;
+    /* Ocupa mais tela */
+    height: auto;
+    /* Altura automática para caber o conteúdo */
+    flex-direction: column;
+    /* Empilha o formulário */
+  }
+
+  /* Esconde a imagem da esquerda em telas pequenas */
+  .contato-left {
+    display: none;
+  }
+
+  .contato-right {
+    width: 100%;
+    /* Faz o formulário ocupar todo o espaço */
+    padding: 2rem;
+  }
+
+  /* Faz os campos do formulário usarem 100% da largura */
+  .input-group {
+    width: 100%;
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  .sessao-contato h1 {
+    font-size: 2.5rem;
+  }
+
+
+  /* --- 4. Rodapé --- */
+  .footer-content {
+    width: 90%;
+    flex-direction: column;
+    /* Empilha o texto e as redes sociais */
+    align-items: center;
+    /* Centraliza tudo */
+    gap: 1.5rem;
+    /* Espaço entre o texto e as redes */
+  }
+
+  .footer-content p {
+    text-align: center;
+    /* Centraliza o texto de copyright */
+    font-size: 1rem;
+  }
+
+  .social-list a {
+    margin: 0 1rem;
+    /* Reduz um pouco o espaço entre os ícones */
+  }
+}
+
+
+/* Ajuste fino para celulares bem pequenos */
+@media (max-width: 450px) {
+  .banner h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .banner p {
+    font-size: 1.2rem;
+  }
+
+  .banner button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* =============================================
+   FIM - CÓDIGO DE RESPONSIVIDADE
+   ============================================= */
