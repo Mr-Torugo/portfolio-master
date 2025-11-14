@@ -9,4 +9,6 @@ Icones
 
 --- 
 
-## Como visualizar Baixe o projeto e abra o link https://mr-torugo.github.io/portfolio-master no navegador.
+## Como visualizar 
+
+Abra o link https://mr-torugo.github.io/portfolio-master no navegador.
