@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
-  <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./imagens/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./imagens/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./imagens/icons/favicon-16x16.png">
   <title>Portfólio</title>
 </head>
 
@@ -31,10 +30,14 @@
         <h1>
           <p>EU SOU <span class="typed-text"></span><span class="cursor typing"> ឵឵</span>
         </h1>
-        <p>Designer, Desevolvedor, Freelancer</p>
+        <p>Designer, Desenvolvedor, Freelancer</p>
         <div class="botoes-head">
-          <button>Saiba mais</button>
-          <button>Baixar curriculo</button>
+          <a href="#conhecimentos">
+            <button>Saiba mais</button>
+          </a>
+          <a href="/imagens/Curriculo.pdf" download="curriculo-VITOR-HUGO.pdf">
+            <button>Baixar curriculo</button>
+          </a>
         </div>
 
       </div>
@@ -43,17 +46,16 @@
     <aside class="sidebar">
       <nav>
         <ul class="menu">
-          <li class="menu-item"><a href="#home" class="menu-link">Home</a></li>
-          <li class="menu-item"><a href="#conhecimentos" class="menu-link">Conhecimento</a></li>
-          <li class="menu-item"><a href="#projetos" class="menu-link">Projetos</a></li>
-          <li class="menu-item"><a href="#contato" class="menu-link">Contato</a></li>
-          <li class="menu-item"><a href="#orcamento" class="menu-link">Orçamento</a></li>
+          <li class="menu-item"><a href="#home" class="menu-link" target="_blank">Home</a></li>
+          <li class="menu-item"><a href="#conhecimentos" class="menu-link" target="_blank">Conhecimento</a></li>
+          <li class="menu-item"><a href="#projetos" class="menu-link" target="_blank">Projetos</a></li>
+          <li class="menu-item"><a href="#contato" class="menu-link" target="_blank">Contato</a></li>
         </ul>
       </nav>
       <div class="social-media">
-        <a href="https://www.facebook.com/vhugoqwqdsa"><i class="fab fa-facebook"></i></a>
-        <a href="https://github.com/Mrtorugo"><i class="fab fa-github-alt"></i></a>
-        <a href="https://twitter.com/vhugoqwq"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/mrtorugo/?hl=pt-br"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Mr-Torugo"><i class="fab fa-github-alt"></i></a>
+        <a href="https://www.linkedin.com/in/vitor-hugo-05b2b91a7/"><i class="fab fa-linkedin"></i></a>
       </div>
     </aside>
 
@@ -207,43 +209,60 @@
           <div class="contato-right">
             <h1>Contato</h1>
             <form>
-              <div class="input-group">
-                <input type="text" class="field" id="nome">
-                <label for="nome" class="field-label">Nome</label>
+              <div class="links">
+
+                <a href="https://www.linkedin.com/in/vitor-hugo-05b2b91a7/" target="_blank" class="social-button">
+                  <img class="linkedin-logo" src="./imagens/icons/linkedin-logo0.svg" />
+                  <div class="linkedin">Linkedin</div>
+                  <img class="arrow-up-right" src="./imagens/icons/ArrowUpRight.svg" />
+                </a>
+
+                <a href="https://www.instagram.com/mrtorugo/?hl=pt-br" target="_blank" class="social-button">
+                  <img class="instagram-logo" src="./imagens/icons/instagram-logo0.svg" />
+                  <div class="linkedin">Instagram</div>
+                  <img class="arrow-up-right2" src="./imagens/icons/ArrowUpRight.svg" />
+                </a>
+
+                <a href="https://github.com/Mr-Torugo" class="social-button" target="_blank">
+                  <img class="github-logo" src="./imagens/icons/github-logo0.svg" />
+                  <div class="linkedin">GitHub</div>
+                  <img class="arrow-up-right3" src="./imagens/icons/ArrowUpRight.svg" />
+                </a>
+
+                <a href="mailto:vhugo4040@gmail.com" class="social-button">
+                  <img class="envelope-simple" src="./imagens/icons/envelope-simple0.svg" />
+                  <div class="linkedin">E-mail</div>
+                  <img class="arrow-up-right4" src="./imagens/icons/ArrowUpRight.svg" />
+                </a>
+
               </div>
-              <div class="input-group">
-                <input type="text" class="field" id="email">
-                <label for="email" class="field-label">E-mail</label>
-              </div>
-              <div class="input-group">
-                <textarea class="field" id="mensagem"></textarea>
-                <label for="mensagem" class="field-label">Mensagem</label>
-              </div>
-              <button type="submit" class="btn btn-submit">Enviar</button>
             </form>
           </div>
         </div>
-      </section>
+  </div>
+  </section>
 
-    </section>
+  </section>
 
-    <footer>
-      <div class="footer-content">
-        <p>
-          Copyright &copy; 2025, Vitor Hugo - Todos os diretos reservados
-        </p>
-        <div class="social-list">
-          <ul>
-            <li><a href="https://www.facebook.com/vhugoqwqdsa"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.instagram.com/mrtorugo/?hl=pt-br"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://twitter.com/vhugoqwq"><i class="fab fa-twitter"></i></a></li>
-          </ul>
-        </div>
+  <footer>
+    <div class="footer-content">
+      <p>
+        Copyright &copy; 2025, Vitor Hugo - Todos os diretos reservados
+      </p>
+      <div class="social-list">
+        <ul>
+          <li><a href="https://github.com/Mr-Torugo" target="_blank"><i class="fab fa-github-alt"></i></a></li>
+          <li><a href="https://www.instagram.com/mrtorugo/?hl=pt-br" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/vitor-hugo-05b2b91a7/" target="_blank"><i
+                class="fab fa-linkedin"></i></a></li>
+        </ul>
       </div>
-    </footer>
-    <a href="#home" id="link-topo">
-      <i class="fas fa-arrow-up"></i>
-    </a>
+    </div>
+  </footer>
+  <a href="#home" id="link-topo">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
 
   </div>

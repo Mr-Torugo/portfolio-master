@@ -7,10 +7,10 @@ const typedtextspan = document.querySelector(".typed-text");
 const cursorspan = document.querySelector(".cursor");
 
 
-const textarray = ["DEVELOPER.", "DESIGNER.", "FREELANCER.", "VITOR HUGO."];
+const textarray = ["DEVELOPER.", "DESIGNER.", "FREELANCER.", "ESTUDANTE.", "VITOR HUGO."];
 const typingdelay = 150;
 const erasingdelay = 50;
-const newtextdelay = 1000;
+const newtextdelay = 800;
 let textarrayindex = 0;
 let charindex = 0;
 function type() {

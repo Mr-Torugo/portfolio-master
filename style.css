@@ -622,76 +622,127 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 5px;
+
 }
 
-.input-group {
+
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
   position: relative;
+  width: 100%;
+  max-width: 400px;
+
 }
 
-.field {
-  background: transparent;
-  border: none;
-  width: 20rem;
-  font-size: 1.5rem;
-  font-family: var(--font-secundary);
-  border-bottom: 2px dashed #636363;
-  height: 3rem;
-  outline: none;
-  margin: 1rem 0;
+.social-button {
+  background: var(--base-gray-400, #292c34);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.input-group textarea {
-  padding-top: 1rem;
-  max-width: 25rem;
-  max-height: 3rem;
+.linkedin-logo {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: visible;
 }
 
-.field-label {
-  position: absolute;
-  left: 0;
-  top: 2rem;
-  font-size: 1rem;
-  font-family: var(--font-secundary);
-  text-transform: uppercase;
-  transition: all 0.3s;
+.social-button .linkedin,
+.social-button p {
+
+  color: var(--color-white-solid, #ffffff);
+  text-align: left;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 600;
+  position: relative;
+  flex: 1;
+
+  margin-top: 0;
 }
 
-.field:focus~label {
-  top: 0;
-  font-size: 0.7rem;
+.arrow-up-right {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
 }
 
-.field:focus {
-  border-bottom: 1px solid;
+.instagram-logo {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: visible;
 }
 
-.btn-submit {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  width: 80%;
-  height: 2.5rem;
-  margin-top: 1rem;
-  letter-spacing: 0.2rem;
-  cursor: pointer;
-  text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+.arrow-up-right2 {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
 }
 
-.preenchido {
-  pointer-events: none;
+.github-logo {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: visible;
 }
 
-.btn {
-  background: #6a3093;
-  background: -webkit-linear-gradient(to right, #a044ff, #6a3093);
-  background: linear-gradient(to left, #a044ff, #6a3093);
-  font-family: var(--font-action);
-  color: #eee;
-  border-radius: 0.5rem;
-  border: none;
-  box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+.arrow-up-right3 {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
 }
 
+.envelope-simple {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: visible;
+}
+
+.arrow-up-right4 {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
+}
+
+.social-button:hover {
+  transform: scale(1.03);
+
+}
+
+.social-button:hover {
+
+  background: #3a3e47;
+}
 
 
 footer {
@@ -744,8 +795,8 @@ footer {
 
 
 /* =============================================
-   INÍCIO - CÓDIGO DE RESPONSIVIDADE
-   ============================================= */
+   INÍCIO - CÓDIGO DE RESPONSIVIDADE
+   ============================================= */
 
 @media (max-width: 900px) {
 
@@ -773,16 +824,15 @@ footer {
   .conhecimentos {
     display: flex;
     flex-direction: column;
-    /* Empilha os itens */
+
     align-items: center;
-    /* Centraliza os cards de conhecimento */
+
     gap: 2rem;
-    /* Adiciona um espaço entre os cards */
+
     padding: 2rem 0;
-    /* Adiciona preenchimento vertical */
+
   }
 
-  /* Reseta os posicionamentos de grid originais */
   .conhecimento:nth-child(1),
   .conhecimento:nth-child(2),
   .conhecimento:nth-child(3),
@@ -795,52 +845,35 @@ footer {
 
   .conhecimento {
     width: 80%;
-    /* Faz cada card ocupar 80% da largura */
     max-width: 400px;
-    /* Mas limita a largura máxima */
   }
 
-  /* A imagem decorativa no meio do grid pode ser escondida 
-     em telas menores para economizar espaço. */
+
   .conhecimentos-img-wrapper {
     display: none;
   }
 
 
-  /* --- 3. Seção Contato --- */
-  /* empilhar o formulário e a imagem */
+
   .contato-wrapper {
     width: 90%;
-    /* Ocupa mais tela */
+
     height: auto;
-    /* Altura automática para caber o conteúdo */
+
     flex-direction: column;
-    /* Empilha o formulário */
+
   }
 
-  /* Esconde a imagem da esquerda em telas pequenas */
+  /* --- 3. Seção Contato --- */
   .contato-left {
     display: none;
   }
 
   .contato-right {
     width: 100%;
-    /* Faz o formulário ocupar todo o espaço */
-    padding: 2rem;
+
   }
 
-  /* Faz os campos do formulário usarem 100% da largura */
-  .input-group {
-    width: 100%;
-  }
-
-  .field {
-    width: 100%;
-  }
-
-  .sessao-contato h1 {
-    font-size: 2.5rem;
-  }
 
 
   /* --- 4. Rodapé --- */
@@ -884,5 +917,5 @@ footer {
 }
 
 /* =============================================
-   FIM - CÓDIGO DE RESPONSIVIDADE
-   ============================================= */
+   FIM - CÓDIGO DE RESPONSIVIDADE
+   ============================================= */
