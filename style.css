@@ -642,7 +642,7 @@ a {
 }
 
 .social-button {
-  background: var(--base-gray-400, #292c34);
+  background: rgb(39, 39, 39);
   border-radius: 8px;
   padding: 20px;
   display: flex;
