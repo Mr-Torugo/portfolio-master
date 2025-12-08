@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Muli:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css");
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300;1,400&display=swap');
 
 * {
@@ -19,16 +17,14 @@
   --font-tertiary: "Poppins", sans-serif;
   --color: #3c3163;
   --transition-time: 0.5s;
-
-
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* --- Menu Hamburguer --- */
 .hamburguer {
-  /*background-color:#fff;*/
   width: 2rem;
   height: 2rem;
   position: fixed;
@@ -43,7 +39,6 @@ html {
 
 .show-menu .hamburguer {
   right: 16rem;
-
 }
 
 .line {
@@ -52,12 +47,10 @@ html {
   background-color: #fff;
   box-shadow: 0.1rem 0.1rem 1px #000000;
   transition: transform 1s;
-
 }
 
 .show-menu #line1 {
   transform: rotate(50deg) translate(.3rem, .3rem);
-
 }
 
 .show-menu #line2 {
@@ -67,7 +60,6 @@ html {
 
 .show-menu #line3 {
   transform: rotate(-50deg) translate(.3rem, -.45rem);
-
 }
 
 .hamburguer span {
@@ -98,6 +90,7 @@ html {
   opacity: 1;
 }
 
+/* --- Header e Banner --- */
 header {
   width: 100%;
   height: 100vh;
@@ -125,7 +118,6 @@ header {
   object-fit: cover;
   opacity: 0.5;
   animation: zoom 25s;
-
 }
 
 @keyframes zoom {
@@ -167,6 +159,55 @@ header {
   }
 }
 
+.banner p {
+  font-family: var(--font-secundary);
+  color: #fff;
+  font-size: 2rem;
+  text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: moveBanner 1s 0.7s forwards;
+}
+
+.banner button {
+  font-family: var(--font-action);
+  color: #fff;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  background: #641d97;
+  background: -webkit-linear-gradient(to left #a044ff, #6a3093);
+  background: linear-gradient(to right, #a044ff, #6a3093);
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  animation: moveBanner 1s 0.9s forwards;
+}
+
+.banner button:hover {
+  color: #000000;
+}
+
+.typed-text {
+  font-weight: normal;
+  color: rgb(#6a3093);
+}
+
+.cursor {
+  display: inline-block;
+  width: block;
+  background-color: transparent;
+  margin-left: 0.1rem;
+  animation: blink 1s infinite;
+}
+
+.cursor.typing {
+  animation: none;
+  color: transparent;
+}
+
+/* --- Sidebar --- */
 .sidebar {
   width: 20rem;
   height: 100vh;
@@ -187,13 +228,25 @@ header {
   margin-bottom: .5rem;
 }
 
+.menu-link {
+  font-family: var(--font-action);
+  font-size: 2rem;
+  color: #555;
+  transition: color 1s;
+}
+
 .menu-link:hover {
   color: #6a3093;
+}
 
+.menu {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .social-media {
-
   position: absolute;
   bottom: 2rem;
   width: 100%;
@@ -217,15 +270,32 @@ header {
   background-color: #a044ff;
 }
 
+/* --- Conhecimentos --- */
+.sessao-conhecimentos {
+  background-color: #f5f5f5;
+}
+
+.sessao-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sessao-header h1 {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  color: #4b4b4b;
+  border-bottom: solid 3px #6a3093;
+  margin-bottom: 1.5rem;
+}
 
 .conhecimentos {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(6, 6rem);
-  row-gap: .5rem;
+  /* CORREÇÃO: Usar auto permite que o texto cresça sem atropelar */
+  grid-template-rows: repeat(6, auto);
+  row-gap: 1.5rem;
 }
-
-
 
 .conhecimento:nth-child(1) {
   grid-column: 4 / 7;
@@ -257,42 +327,20 @@ header {
   grid-row: 5 / -1;
 }
 
-.sessao-conhecimentos {
-  background-color: #f5f5f5;
-
-
-}
-
-.sessao-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sessao-header h1 {
-  font-family: var(--font-primary);
-  font-size: 3rem;
-  color: #4b4b4b;
-  border-bottom: solid 3px #6a3093;
-  margin-bottom: 1.5rem;
-}
-
 .conhecimento-header {
   display: flex;
   align-items: center;
   color: #4b4b4b;
-
 }
 
 .conhecimentos-header i {
   font-size: 2.5rem;
 }
 
-.conhecimento-headerh3 {
+.conhecimento-header h3 {
   font-family: var(--font-secundary);
   font-size: 2rem;
   padding-left: 1rem;
-
 }
 
 .conhecimento-text {
@@ -305,91 +353,14 @@ header {
   grid-column: 7 / 11;
   grid-row: 2 / 6;
   width: 100%;
-
 }
 
 .conhecimentos-img-wrapper img {
   object-fit: cover;
   width: 100%;
-
 }
 
-
-
-.menu-link {
-  font-family: var(--font-action);
-  font-size: 2rem;
-  color: #555;
-  transition: color 1s;
-
-
-}
-
-.menu {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-.banner p {
-  font-family: var(--font-secundary);
-  color: #fff;
-  font-size: 2rem;
-  text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: moveBanner 1s 0.7s forwards;
-}
-
-.banner button {
-  font-family: var(--font-action);
-  color: #fff;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  background: #641d97;
-  background: -webkit-linear-gradient(to left #a044ff, #6a3093);
-  background: linear-gradient(to right, #a044ff, #6a3093);
-  padding: 1rem 3rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  opacity: 0;
-  animation: moveBanner 1s 0.9s forwards;
-}
-
-.banner button:hover {
-
-  color: #000000;
-}
-
-
-.typed-text {
-  font-weight: normal;
-  color: rgb(#6a3093);
-
-}
-
-.cursor {
-  display: inline-block;
-  width: block;
-  background-color: transparent;
-  margin-left: 0.1rem;
-  animation: blink 1s infinite;
-}
-
-.cursor.typing {
-  animation: none;
-  color: transparent;
-}
-
-
-
-/*css dos card*/
-
-
-
+/* --- Cards / Projetos --- */
 a {
   color: inherit;
 }
@@ -404,8 +375,6 @@ a {
   padding: 4rem;
   margin: 0 auto;
   width: max-content;
-
-
 }
 
 .card {
@@ -418,7 +387,6 @@ a {
   color: white;
   border-radius: 1em;
   padding: 1em;
-  /*margin: 2em;*/
   display: flex;
   align-items: flex-end;
   background-size: cover;
@@ -429,7 +397,6 @@ a {
   overflow: hidden;
   border: 10px solid #ccc;
   text-decoration: none;
-  /*z-index: -10;*/
 }
 
 .card:hover {
@@ -536,49 +503,7 @@ a {
   font-weight: normal;
 }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .info {
-    justify-content: center;
-  }
-
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-
-  .info h1 {
-    margin: 0;
-  }
-}
-
+/* --- Contato (CSS Corrigido) --- */
 .sessao-contato {
   width: 100%;
   height: 100vh;
@@ -623,26 +548,26 @@ a {
   flex-direction: column;
   align-items: center;
   padding-top: 5px;
-
 }
 
-
-
+/* Botões Sociais */
 .links {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
   position: relative;
   width: 100%;
+  /* Responsivo */
   max-width: 400px;
-
+  /* Largura máxima */
+  margin: 0 auto;
 }
 
 .social-button {
-  background: rgb(39, 39, 39);
+  background: var(--base-gray-400, #292c34);
   border-radius: 8px;
   padding: 20px;
   display: flex;
@@ -651,11 +576,26 @@ a {
   align-items: center;
   flex-shrink: 0;
   width: 100%;
+  /* Preenche o container .links */
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
-.linkedin-logo {
+.social-button:hover {
+  transform: scale(1.03);
+  background: #3a3e47;
+}
+
+/* Logos e Setas */
+.linkedin-logo,
+.instagram-logo,
+.github-logo,
+.envelope-simple,
+.arrow-up-right,
+.arrow-up-right2,
+.arrow-up-right3,
+.arrow-up-right4 {
   flex-shrink: 0;
   width: 28px;
   height: 28px;
@@ -663,9 +603,16 @@ a {
   overflow: visible;
 }
 
-.social-button .linkedin,
-.social-button p {
+.arrow-up-right,
+.arrow-up-right2,
+.arrow-up-right3,
+.arrow-up-right4 {
+  width: 20px;
+  height: 20px;
+}
 
+/* Estilo unificado para o Texto dos botões */
+.social-button .linkedin {
   color: var(--color-white-solid, #ffffff);
   text-align: left;
   font-family: var(--font-primary);
@@ -674,77 +621,12 @@ a {
   font-weight: 600;
   position: relative;
   flex: 1;
-
+  /* Faz o texto ocupar o espaço disponível */
   margin-top: 0;
 }
 
-.arrow-up-right {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  overflow: visible;
-}
 
-.instagram-logo {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  position: relative;
-  overflow: visible;
-}
-
-.arrow-up-right2 {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  overflow: visible;
-}
-
-.github-logo {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  position: relative;
-  overflow: visible;
-}
-
-.arrow-up-right3 {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  overflow: visible;
-}
-
-.envelope-simple {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  position: relative;
-  overflow: visible;
-}
-
-.arrow-up-right4 {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  overflow: visible;
-}
-
-.social-button:hover {
-  transform: scale(1.03);
-
-}
-
-.social-button:hover {
-
-  background: #3a3e47;
-}
-
-
+/* --- Footer --- */
 footer {
   width: 100%;
   height: 7rem;
@@ -795,13 +677,57 @@ footer {
 
 
 /* =============================================
-   INÍCIO - CÓDIGO DE RESPONSIVIDADE
-   ============================================= */
+   INÍCIO - CÓDIGO DE RESPONSIVIDADE (MEDIA QUERIES)
+   ============================================= */
 
-@media (max-width: 900px) {
+/* Ajuste para Cards */
+@media screen and (max-width: 1285px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-  /* --- 1. Seção Header / Banner --- */
-  /* Ajusta o posicionamento e o tamanho das fontes no banner */
+/* --- NOVO: Ponto de Quebra para Tablets/Notebooks pequenos (1200px) --- */
+@media screen and (max-width: 1200px) {
+
+  /* Conhecimentos: Transforma em lista vertical para não quebrar layout */
+  .conhecimentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  /* Remove posicionamento de grid fixo */
+  .conhecimento:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+    width: 80%;
+    max-width: 600px;
+    margin: 0;
+  }
+
+  .conhecimentos-img-wrapper {
+    display: none;
+    /* Esconde a imagem central */
+  }
+
+  .conhecimento-header {
+    justify-content: center;
+    /* Centraliza ícones e titulos */
+  }
+
+  .conhecimento-text {
+    text-align: center;
+  }
+}
+
+
+/* --- Mobile Padrão (900px) --- */
+@media screen and (max-width: 900px) {
+
+  /* Banner */
   .banner {
     left: 10%;
     width: 80%;
@@ -809,99 +735,87 @@ footer {
 
   .banner h1 {
     font-size: 2.5rem;
-    /* Um pouco menor que os 3rem originais */
     line-height: 3rem;
   }
 
   .banner p {
     font-size: 1.5rem;
-    /* Um pouco menor que os 2rem originais */
   }
 
-
-  /* --- 2. Seção Conhecimentos --- */
-
-  .conhecimentos {
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 2rem;
-
-    padding: 2rem 0;
-
+  /* Cards */
+  .cards-wrapper {
+    grid-template-columns: 1fr;
   }
 
-  .conhecimento:nth-child(1),
-  .conhecimento:nth-child(2),
-  .conhecimento:nth-child(3),
-  .conhecimento:nth-child(4),
-  .conhecimento:nth-child(5),
-  .conhecimento:nth-child(6) {
-    grid-column: auto;
-    grid-row: auto;
+  .info {
+    justify-content: center;
   }
 
-  .conhecimento {
-    width: 80%;
-    max-width: 400px;
+  .card-grid-space .num {
+    margin-left: 0;
+    text-align: center;
   }
 
-
-  .conhecimentos-img-wrapper {
-    display: none;
-  }
-
-
-
+  /* Contato */
   .contato-wrapper {
     width: 90%;
-
     height: auto;
-
     flex-direction: column;
-
   }
 
-  /* --- 3. Seção Contato --- */
   .contato-left {
     display: none;
   }
 
   .contato-right {
     width: 100%;
-
+    padding: 2rem;
   }
 
+  .sessao-contato h1 {
+    font-size: 2.5rem;
+  }
 
-
-  /* --- 4. Rodapé --- */
+  /* Footer */
   .footer-content {
     width: 90%;
     flex-direction: column;
-    /* Empilha o texto e as redes sociais */
     align-items: center;
-    /* Centraliza tudo */
     gap: 1.5rem;
-    /* Espaço entre o texto e as redes */
   }
 
   .footer-content p {
     text-align: center;
-    /* Centraliza o texto de copyright */
     font-size: 1rem;
   }
 
   .social-list a {
     margin: 0 1rem;
-    /* Reduz um pouco o espaço entre os ícones */
   }
 }
 
+/* --- Mobile Pequeno (500px) --- */
+@media screen and (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
 
-/* Ajuste fino para celulares bem pequenos */
-@media (max-width: 450px) {
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+/* --- Mobile Muito Pequeno (450px) --- */
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+
+  .info h1 {
+    margin: 0;
+  }
+
   .banner h1 {
     font-size: 2rem;
     line-height: 2.5rem;
@@ -915,7 +829,3 @@ footer {
     padding: 0.8rem 1.5rem;
   }
 }
-
-/* =============================================
-   FIM - CÓDIGO DE RESPONSIVIDADE
-   ============================================= */
